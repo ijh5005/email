@@ -1,0 +1,209 @@
+body {
+	background-color: #ED8283;
+	color: #951408;
+}
+
+#name,
+#topBar {
+	display: flex;
+	font-family: 'Baloo Bhaina', cursive;
+    font-size: 4em;	
+    justify-content: center;
+}
+
+#topBar {
+	flex-direction: row;
+	font-size: 3.3em;
+	justify-content: space-between;
+	margin: 0 auto;
+    width: 60rem;
+}
+
+#timeBox {
+	align-items: center;
+	display: flex;
+    flex-direction: column;
+	margin-left: 2rem;
+    width: 20rem;
+}
+
+#sunrise_sunset {
+	background-color: #951408;
+	border-radius: 5px;
+	display: flex;
+	display: none;
+	height: 2.2em;
+    width: 5em;
+}
+
+.sun {
+	background-image: url("sun.png");
+    background-repeat: no-repeat; 
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;; 
+}
+
+.buttom_sun,
+.buttom_middle_sun,
+.top_middle_sun {
+	position: relative;
+	top: 1.2em;
+	opacity: 0.4;
+}
+
+.buttom_middle_sun{
+	top: 0.7em;
+}
+
+.top_middle_sun {
+	top: 0.3em;
+}
+
+#send {
+	align-items: center;
+    display: flex;
+    font-size: 1em;
+    justify-content: center;
+    margin-right: 2rem;
+    width: 24.8rem;
+}
+
+#send_btn {
+	align-items: center;
+	border: 1rem solid;
+    border-radius: 0.1em;
+    display: flex;
+    height: 1.2em;
+    padding: 1.4rem;
+}
+
+#send_btn:hover {
+    background-color: #951408;
+    color: #ED8283;
+}
+
+#inputs {
+    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+    width: 60rem;
+}
+
+#email_input {
+	display: flex;
+	flex-direction: row;
+    height: 8rem;
+    margin-top: 4em;
+	width: 58rem;
+}
+
+#email_btn {
+	background-color: #951408;
+    border-bottom-left-radius: 1.1em;
+    border-top-left-radius: 1.1em;
+	display: flex;
+    height: 8rem;
+    justify-content: center;
+    width: 18rem;
+}
+
+#email_text,
+#send_time_text,
+.send_time {
+	color: #ED8283;
+	font-family: 'Baloo Bhaina', cursive;
+	font-size: 5em;
+}
+
+.send_time:hover {
+	color: #D9393B;
+}
+
+#email_box {
+	background-color: #FED3D3;
+	border: solid 1rem;
+    border-bottom-right-radius: 1.1em;
+    border-top-right-radius: 1.1em;
+	height: 6rem;
+	width: 40rem;
+}
+
+#email_text_input {
+    background-color: #FED3D3;
+    border: #ED8283;
+    font-family: 'Baloo Bhaina', cursive;
+    font-size: 4em;
+    height: 4.8rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    outline-width: 0;
+    width: 37rem;
+}
+
+#send_time_input {
+	display: flex;
+	margin-top: 1rem;
+}
+
+#send_time_btn {
+    background-color: #951408;
+    border: solid;
+    border-bottom-left-radius: 1.1em;
+    border-top-left-radius: 1.1em;
+    display: flex;
+    height: 8rem;
+    justify-content: center;
+    width: 26rem;
+}
+
+#send_time_boxes {
+	align-items: center;
+	display: flex;
+}
+
+.send_time {
+	align-items: center;
+	border-radius: 0.1em;
+	background-color: #951408;
+	display: flex;
+	font-size: 7rem;
+	height: 7rem;
+	justify-content: center;
+    margin-left: 1rem;
+    width: 4.4rem;
+}
+
+.send_time span {
+	height: 12rem;
+}
+
+textarea {
+	background-color: #FED3D3;
+	border-radius: 0.1em;
+	border-width: 0;
+	font-family: 'Baloo Bhaina', cursive;
+	font-size: 3.4rem;
+	height: 20rem;
+	line-height: 1.2;
+	margin-top: 1em;
+	outline: none;
+	padding: 3rem;
+    width: 55rem;   
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
+}

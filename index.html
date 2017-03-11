@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Me Whenever</title>
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="email.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="ng_email.js"></script>
+	<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script type="text/javascript">
+	   (function(){
+	      emailjs.init("user_Yhneoe75xmqsjM7zpUprB");
+	   })();
+	</script>
+</head>
+<body ng-app="email">
+	<div id="name" ng-controller="email_ctrl"> {{name}} </div>
+	<div id="topBar" ng-controller="email_ctrl">
+		<div id="timeBox">
+			<div id="time"> {{ today | date : "hh:mm:ss a" }} </div>
+			<div id="sunrise_sunset">
+				<div class="sun buttom_sun"></div>
+				<div class="sun buttom_middle_sun"></div>
+				<div class="sun top_middle_sun"></div>
+				<div class="sun"></div>
+				<div class="sun top_middle_sun"></div>
+				<div class="sun buttom_middle_sun"></div>
+				<div class="sun buttom_sun"></div>
+			</div>
+		</div>
+		<div id="send">
+			<div id="send_btn" ng-controller="email_ctrl" ng-click="submit()"><span>send</span></div>
+		</div>
+	</div>
+	<div id="inputs">
+		<div id="email_input">
+			<div id="email_btn"><span id="email_text">email</span></div>
+			<div id="email_box">
+				<input id="email_text_input" type="text" name="">
+			</div>
+		</div>
+		<div id="send_time_input">
+			<div id="send_time_btn">
+				<span id="send_time_text">send time</span>
+			</div>
+			<div id="send_time_boxes" data="0" ng-controller="email_ctrl">
+				<div class="send_time" ng-click="change_time($event); edit()"><span id="hourFirst" class="time" data="1"></span></div>
+				<div class="send_time" ng-click="change_time($event); edit()"><span id="hourSecond" class="time" data="2"></span></div>
+				<div class="send_time"><span>:</span></div>
+				<div class="send_time" ng-click="change_time($event); edit()"><span id="minFirst" class="time" data="3"></span></div>
+				<div class="send_time" ng-click="change_time($event); edit()"><span id="minSecond" class="time" data="4"></span></div>
+				<div class="send_time" ng-click="midday($event); edit()"><span id="am_pm" class="time" data="5"></span></div>
+			</div>
+		</div>
+		<textarea id="message"></textarea>
+	</div>
+</body>
+</html>
