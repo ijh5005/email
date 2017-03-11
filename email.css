@@ -4,11 +4,23 @@ body {
 }
 
 #name,
+#description,
 #topBar {
 	display: flex;
 	font-family: 'Baloo Bhaina', cursive;
-    font-size: 4em;	
+	height: 7rem;	
     justify-content: center;
+}
+
+#title_text {
+	font-size: 5rem;
+}
+#description_text {
+	font-size: 2rem;
+}
+
+#description {
+    font-size: 2em;	
 }
 
 #topBar {
@@ -78,11 +90,6 @@ body {
     padding: 1.4rem;
 }
 
-#send_btn:hover {
-    background-color: #951408;
-    color: #ED8283;
-}
-
 #inputs {
     align-items: center;
 	display: flex;
@@ -92,7 +99,8 @@ body {
     width: 60rem;
 }
 
-#email_input {
+#email_input,
+#name_input {
 	display: flex;
 	flex-direction: row;
     height: 8rem;
@@ -100,7 +108,12 @@ body {
 	width: 58rem;
 }
 
-#email_btn {
+#name_input {
+	margin-top: 2em;
+}
+
+#email_btn,
+#name_btn {
 	background-color: #951408;
     border-bottom-left-radius: 1.1em;
     border-top-left-radius: 1.1em;
@@ -111,6 +124,7 @@ body {
 }
 
 #email_text,
+#name_text,
 #send_time_text,
 .send_time {
 	color: #ED8283;
@@ -122,25 +136,28 @@ body {
 	color: #D9393B;
 }
 
-#email_box {
+#email_box,
+#name_box {
+	align-items: center;
 	background-color: #FED3D3;
 	border: solid 1rem;
     border-bottom-right-radius: 1.1em;
     border-top-right-radius: 1.1em;
+    display: flex;
 	height: 6rem;
+	justify-content: center;
 	width: 40rem;
 }
 
-#email_text_input {
+#email_text_input,
+#name_text_input {
     background-color: #FED3D3;
     border: #ED8283;
     font-family: 'Baloo Bhaina', cursive;
     font-size: 4em;
-    height: 4.8rem;
-    margin-left: 2rem;
-    margin-top: 1rem;
+    height: 5.5rem;
     outline-width: 0;
-    width: 37rem;
+    width: 36rem;
 }
 
 #send_time_input {
@@ -166,6 +183,7 @@ body {
 
 .send_time {
 	align-items: center;
+	border-bottom: 8px solid #D9393B;
 	border-radius: 0.1em;
 	background-color: #951408;
 	display: flex;

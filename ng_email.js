@@ -4,6 +4,7 @@ var app = angular.module("email", []);
 
 app.controller("email_ctrl", ["$scope", "$interval", "$timeout", "send", "track", "increment", "ampm", function ($scope, $interval, $timeout, send, track, increment, ampm) {
 	$scope.name = "Email Me Whenever!";
+	$scope.description = "press the time buttons to choose a projected send time"
 	$scope.time = "01:27:00 PM";
 	var edit_status = $("#send_time_boxes").attr("data");
 	$interval( function () {
@@ -22,7 +23,19 @@ app.controller("email_ctrl", ["$scope", "$interval", "$timeout", "send", "track"
 	$scope.submit = function () {
 		var message_html = $("#message").val();
 		var email = $("#email_text_input").val();
-		send.send_email( email, message_html );
+		var from = $("#name_text_input").val();
+		var to = $("#to_text_input").val();
+		$("#email_text_input").val("sending...");
+		send.send_email( email, message_html, from);
+	};
+
+	$scope.mousedown = function () {
+		$("#send_btn").css("color", "#ED8283");
+		$("#send_btn").css("background-color", "#951408");
+		$timeout( function () {
+			$("#send_btn").css("color", "#951408");
+			$("#send_btn").css("background-color", "#ED8283");
+		}, 200);
 	};
 
 	$scope.edit = function () {
@@ -40,7 +53,7 @@ app.controller("email_ctrl", ["$scope", "$interval", "$timeout", "send", "track"
 }]);
 
 app.service("send", function ($interval) {
-	this.send_email = function (email, message_html) {
+	this.send_email = function (email, message_html, from) {
 		var send_wait = $interval( function () {
 			var current_time = $("#time").html();
 			var split = current_time.split(":");
@@ -63,9 +76,17 @@ app.service("send", function ($interval) {
 							 {
 								"email": email,
 							 	"reply_to":"ijh5005@outlook.com",
-							 	"from_name":"isaiah",
-							 	"to_name":"isaiah harrison",
-							 	"message_html": message_html});
+							 	"from_name": from,
+							 	"message_html": message_html})
+							.then(function(response) {
+							   console.log("SUCCESS");
+							  	$("#message").val("");
+								$("#name_text_input").val("");
+							  	$("#email_text_input").val("message sent");
+							}, function(err) {
+							   console.log("FAILED. error=", err);
+							   $("#email_text_input").val("invalid email...");
+							});
 			}
 		}, 100);				
 	};

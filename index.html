@@ -15,7 +15,8 @@
 	</script>
 </head>
 <body ng-app="email">
-	<div id="name" ng-controller="email_ctrl"> {{name}} </div>
+	<div id="name" ng-controller="email_ctrl"><span id="title_text">{{name}}</span></div>
+	<div id="description" ng-controller="email_ctrl"><span id="description_text">{{description}}</span></div>
 	<div id="topBar" ng-controller="email_ctrl">
 		<div id="timeBox">
 			<div id="time"> {{ today | date : "hh:mm:ss a" }} </div>
@@ -30,14 +31,20 @@
 			</div>
 		</div>
 		<div id="send">
-			<div id="send_btn" ng-controller="email_ctrl" ng-click="submit()"><span>send</span></div>
+			<div id="send_btn" ng-controller="email_ctrl" ng-click="submit()" ng-mousedown="mousedown()"><span>send</span></div>
 		</div>
 	</div>
 	<div id="inputs">
 		<div id="email_input">
-			<div id="email_btn"><span id="email_text">email</span></div>
+			<div id="email_btn"><span id="email_text">To</span></div>
 			<div id="email_box">
-				<input id="email_text_input" type="text" name="">
+				<input id="email_text_input" type="text" placeholder="email">
+			</div>
+		</div>
+		<div id="name_input">
+			<div id="name_btn"><span id="name_text">From</span></div>
+			<div id="name_box">
+				<input id="name_text_input" type="text" placeholder="your name">
 			</div>
 		</div>
 		<div id="send_time_input">
@@ -53,7 +60,7 @@
 				<div class="send_time" ng-click="midday($event); edit()"><span id="am_pm" class="time" data="5"></span></div>
 			</div>
 		</div>
-		<textarea id="message"></textarea>
+		<textarea id="message" placeholder="enter your message..." title="hi"></textarea>
 	</div>
 </body>
 </html>
